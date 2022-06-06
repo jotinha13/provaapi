@@ -7,8 +7,9 @@ create table tb_anime(
     nm_anime    varchar(100)
 );
 
-
+-- inserir animie
 insert into tb_anime(nm_anime)
 values ("Bleach");
 
+-- ver todos os animes
 select * from tb_anime;
