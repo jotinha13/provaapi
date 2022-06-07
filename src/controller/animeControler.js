@@ -1,22 +1,25 @@
 import { Router } from "express";
 
-import { inserirAnime } from "../repository/animeRepository.js";
+import { inserirAnime ,todosAnimes} from "../repository/animeRepository.js";
 
 
 const server  = Router()
 
-server.post('/anime/inserir', async (req, resp) => {
-    const {anime} = req.body;
+server.post('/anime', async (req, resp) => {
+    const anime = req.body;
     const x = await inserirAnime(anime)
 
     resp.send(x)
 })
 
+
+
+
 server.get('/anime', async (req, resp) => {
     try{
-        const resposta= await listarFilmes()
+        const resposta= await todosAnimes()
         resp.send(resposta) 
-    }catch{
+    }catch(err){
         resp.status(400).send({
             erro: err.message
         })

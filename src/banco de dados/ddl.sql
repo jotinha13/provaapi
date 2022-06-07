@@ -8,7 +8,7 @@ create table tb_anime(
 );
 
 -- inserir animie
-insert into tb_anime(nm_anime)
+insert into tb_anime(id_anime, nm_anime)
 values ("Bleach");
 
 -- ver todos os animes
